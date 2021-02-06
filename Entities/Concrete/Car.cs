@@ -1,4 +1,6 @@
-﻿using Entities.Abstract;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using Entities.Abstract;
 
 namespace Entities.Concrete
 {
@@ -8,7 +10,7 @@ namespace Entities.Concrete
         public int BrandId { get; set; }
         public int ColorId { get; set; }
         public int ModelYear { get; set; }
-        public short DailyPrice { get; set; }
+        public double DailyPrice { get; set; }
         public string Description { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Business.Concrete
 {
@@ -19,10 +20,16 @@ namespace Business.Concrete
             return _carDal.GetAll();
         }
 
-        public List<Car> GetById(int carId)
+        public List<Car> GetCarsByBrandId(int brandId)
         {
-            return _carDal.GetById(carId);
+            return _carDal.GetAll(x => x.BrandId == brandId);
         }
+
+        public List<Car> GetCarsByColorId(int colorId)
+        {
+            return _carDal.GetAll(x => x.ColorId == colorId);
+        }
+
 
         public void Add(Car car)
         {
