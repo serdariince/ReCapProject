@@ -18,6 +18,7 @@ namespace ConsoleUI
 
             var carManager = new CarManager(new EfCarDal());
 
+/*
             Console.WriteLine("---------------------------------GetAll---------------------------------------");
 
             foreach (var car in carManager.GetList())
@@ -50,7 +51,7 @@ namespace ConsoleUI
                 {Id = 10, BrandId = 3, ColorId = 2, DailyPrice = 350, ModelYear = 2020, Description = "Mercedes C180"};
             carManager.Delete(deleteCar);
             foreach (var car in carManager.GetList())
-                Console.WriteLine(car.Id + " Araç bilgisi " + car.Description + " günlük fiyatı :" + car.DailyPrice);
+                Console.WriteLine(car.Id + " Araç bilgisi " + car.Description + " günlük fiyatı :" + car.DailyPrice);*/
         }
     }
 }
