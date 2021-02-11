@@ -30,6 +30,10 @@ namespace Business.Concrete
 
         public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
+            if (brandId<=0)
+            {
+                return new ErrorDataResult<List<Car>>(Messages.ErrorId);
+            }
             return new SuccesDataResult<List<Car>>(_carDal.GetAll(x => x.BrandId == brandId));
         }
 
