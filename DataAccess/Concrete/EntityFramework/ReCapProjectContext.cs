@@ -11,11 +11,15 @@ namespace DataAccess.Concrete.EntityFramework
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
-                @"Data Source=(localdb)\MSSQLLocalDB;Database=ReCapDataBase;Trusted_Connection=true");
+                @"Data Source=DESKTOP-3RC1U7P;Database=ReCapDataBase;Trusted_Connection=true");
         }
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
+        public DbSet<User>  Users { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<CarImage> CarImages { get; set; }
     }
 }

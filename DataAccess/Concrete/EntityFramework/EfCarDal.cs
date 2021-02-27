@@ -19,11 +19,15 @@ namespace DataAccess.Concrete.EntityFramework
             {
                 var result = from c in context.Cars
                     join cor in context.Colors
-
                         on c.ColorId equals cor.Id
-                    select new CarDetails
+                    join br in context.Brands
+                        on c.BrandId equals br.Id
+                    join ci in context.CarImages
+                        on c.Id equals ci.CarId
+                             select new CarDetails
                     {
-                        CarName = c.Description, ColorName = cor.Name
+                        CarName = c.Description, ColorName = cor.Name,
+                        BroundName = br.Name
                     };
                 return result.ToList();
             }
